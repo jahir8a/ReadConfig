@@ -36,7 +36,7 @@ public class ReadConfig extends CordovaPlugin {
                 callbackContext.error("Error UnExpected " + e.getLocalizedMessage());
                 e.printStackTrace();
             }
-            callbackContext.success(message);
+            // callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
