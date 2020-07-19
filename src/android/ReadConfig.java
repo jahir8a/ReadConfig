@@ -6,7 +6,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.jafo.frndly.BuildConfig;
+import org.apache.cordova.BuildConfig;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -27,7 +27,7 @@ public class ReadConfig extends CordovaPlugin {
     private void obtenerValorConfig(JSONArray args, CallbackContext callbackContext) {
         if (args != null) {
             try {
-                String key = args.getString("keyApp");
+                String key = args.getString(0);
                 if(key.equals("keyApp")) {
                     callbackContext.success(BuildConfig.keyApp);
                 }
