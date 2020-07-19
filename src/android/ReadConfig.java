@@ -27,11 +27,10 @@ public class ReadConfig extends CordovaPlugin {
     private void obtenerValorConfig(JSONArray args, CallbackContext callbackContext) {
         if (args != null) {
             try {
-                String key = args.getJSONObject(0).getString("key");
+                String key = args.getString("keyApp");
                 if(key.equals("keyApp")) {
                     callbackContext.success(BuildConfig.keyApp);
                 }
-                
             } catch (Exception e) {
                 callbackContext.error("Error UnExpected " + e.getLocalizedMessage());
                 e.printStackTrace();
