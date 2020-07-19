@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-readconfig" version="1.0.0">
+   <name>ReadConfig</name>
+   <js-module name="ReadConfig" src="www/ReadConfig.js">
+      <clobbers target="cordova.plugins.ReadConfig" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="ReadConfig">
+            <param name="android-package" value="cordova-plugin-readconfig.ReadConfig" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/ReadConfig.java" target-dir="src/cordova-plugin-readconfig/ReadConfig" />
+   </platform>
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="ReadConfig">
+            <param name="ios-package" value="ReadConfig" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/ReadConfig.m" />
+   </platform>
+</plugin>
